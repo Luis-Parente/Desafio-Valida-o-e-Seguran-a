@@ -6,7 +6,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.bds04.dto.CityDTO;
 import com.devsuperior.bds04.dto.EventDTO;
 import com.devsuperior.bds04.entities.City;
 import com.devsuperior.bds04.entities.Event;

@@ -1,8 +1,8 @@
 package com.devsuperior.bds04.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,9 +17,9 @@ public class CityService {
 	private CityRepository repository;
 	
 	@Transactional(readOnly = true)
-	public Page<CityDTO> findAll(Pageable pageable){
-		Page<City> page = repository.findAll(pageable);
-		return page.map(x -> new CityDTO(x));
+	public List<CityDTO> findAllSorted(){
+		List<City> list = repository.findAllSorted();
+		return list.stream().map(x -> new CityDTO(x)).toList();
 	}
 
 	@Transactional
